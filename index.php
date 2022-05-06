@@ -9,7 +9,7 @@ $variabileTesto = "Questo è il paragrafo di testo di mia scelta";
 
 $testoLenght = strlen($variabileTesto);
 
-$parolaCensurata = $_GET['testo'];
+$parolaCensurata = isset ($_GET['testo'] ) ? $_GET['testo'] : '';
 
 $testoCensurato = str_replace($parolaCensurata, '***' , $variabileTesto);
 
@@ -26,18 +26,22 @@ $testoCensurato = str_replace($parolaCensurata, '***' , $variabileTesto);
 <body>
 
 <p>
+    Il testo di base è:
     <?php echo $variabileTesto; ?>
 </p>
 
 <p>
+    La lunghezza del testo di base è:
     <?php echo $testoLenght; ?>
 </p>
 
 <p>
+    La parola decisa da censurare è:
     <?php echo $parolaCensurata; ?>
 </p>
 
 <p>
+    Il testo dopo la censura è:
     <?php echo $testoCensurato; ?>
 </p>
 
