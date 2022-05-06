@@ -9,7 +9,9 @@ $variabileTesto = "Questo è il paragrafo di testo di mia scelta";
 
 $testoLenght = strlen($variabileTesto);
 
+$parolaCensurata = $_GET['testo'];
 
+$testoCensurato = str_replace($parolaCensurata, '***' , $variabileTesto);
 
 ?>
 
@@ -29,6 +31,14 @@ $testoLenght = strlen($variabileTesto);
 
 <p>
     <?php echo $testoLenght; ?>
+</p>
+
+<p>
+    <?php echo $parolaCensurata; ?>
+</p>
+
+<p>
+    <?php echo $testoCensurato; ?>
 </p>
 
     
